@@ -1,0 +1,90 @@
+<div class="w-100 lg:w-1/2 mt-6 pl-0 lg:pl-2">
+    <p class="text-xl pb-6 flex items-center">
+        <i class="fas fa-list mr-3"></i>Profeseur Classe
+    </p>
+    <div class="leading-loose" style="margin-left: 50%; width: 100%;">
+        <form [action]="" [formGroup]="form"  (ngSubmit)="onSubmit()" class="p-10 bg-white rounded shadow-xl">
+                    <div class="col">
+                        <label class="block text-sm text-gray-600">Cours :    </label>
+                        <select
+                        [(ngModel)]="coursSelect"
+                        formControlName="cours"
+                        (change)="SearchByCours()"
+                        name="options" class="block appearance-none w-full bg-classwhite border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                        @for (item of cours?.results; track $index) {
+                            <option value="{{item.id}}">{{item.libelle }}</option>
+                        }
+                        
+                    
+                        </select>
+                      
+                    </div>
+                    <div class="col">
+                        <label class="block text-sm text-gray-600">Salle :    </label>
+                        <select
+                        formControlName="salle"
+                        name="options" class="block appearance-none w-full bg-classwhite border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                        <option value="0">En ligne</option>
+                        @for (item of salle?.results; track $index) {
+                            <option value="{{item.id}}">{{item.nom }}</option>
+                        }
+                        
+                    
+                        </select>
+                      
+                    </div>
+                
+                    <div class="col-md">
+                      <label class="block text-sm text-gray-600">Date :    </label>
+                      <input type="date"
+                          name="date"
+                          formControlName="date"
+                          class="form-control"  aria-label="Last name">
+                          
+                         @if (form.errors && (form.controls['date'].dirty || form.controls['date'].touched)) {
+                          
+                              <small   class="form-text text-danger"  >Entrer une date</small>
+                          
+                          }
+                  </div>
+                  <div class="col-md">
+                    <label class="block text-sm text-gray-600">Heure Debut :    </label>
+                    <input type="time"
+                        name="heureDebut"
+                        formControlName="heureDebut"
+                        class="form-control"  aria-label="Last name">
+                        
+                       @if (form.errors && (form.controls['heureDebut'].dirty || form.controls['heureDebut'].touched)) {
+                        
+                            <small   class="form-text text-danger"  >Entrer une heureDebut</small>
+                        
+                        }
+                </div>
+                <div class="col-md">
+                    <label class="block text-sm text-gray-600">Heure Debut :    </label>
+                    <input type="time"
+                        name="heureFin"
+                        formControlName="heureFin"
+                        class="form-control"  aria-label="Last name">
+                        
+                       @if (form.errors && (form.controls['heureFin'].dirty || form.controls['heureFin'].touched)) {
+                        
+                            <small   class="form-text text-danger"  >Entrer une heureFin</small>
+                        
+                        }
+                </div>
+                
+        
+                        <div  class="my-2 ">
+                            <button [disabled]="form.invalid" type="submit" style="background-color: #3498db; color: white; padding: 10px 20px; border-radius: 5px; font-size: 16px; border: none;">Save</button>
+                          
+                        </div>
+                
+        </form>
+    </div>
+   
+</div>
+
+
+
+

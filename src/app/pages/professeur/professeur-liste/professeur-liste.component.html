@@ -1,0 +1,48 @@
+<div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
+    <h1 class="text-3xl text-black pb-6">Cours</h1>
+    <div  class="my-2 ">
+        <button routerLink="form" style="background-color: #3498db; color: white; padding: 10px 20px; border-radius: 5px; font-size: 16px; border: none;">Nouveau</button>
+        
+        <button routerLink="classe" style="margin-left:50px; background-color: #3498db; color: white; padding: 10px 20px; border-radius: 5px; font-size: 16px; border: none;">Affecter Classe</button>
+
+    
+    </div>
+    
+    <div class="w-full mt-6">
+        <p class="text-xl pb-3 flex items-center">
+            <i class="fas fa-list mr-3"></i> Liste Des Cours
+        </p>
+      
+    <div class="bg-white overflow-auto">
+      <table class="min-w-full bg-white">
+          <thead class="bg-gray-800 text-white">
+              <tr>
+                  <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Nom complet</th>
+                  <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Grade</th>
+                  <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Specialite</th>
+                  <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Action</th>
+              </tr>
+          </thead>
+          <tbody class="text-gray-700">
+              @for (item of response?.results; track $index) {
+                  <tr class="hover:bg-grey-lighter">
+                      <td class="py-4 px-6 border-b border-grey-light">{{item.nom + "  " + item.prenom}}</td>
+                      <td class="py-4 px-6 border-b border-grey-light">{{item.grade}}</td>
+                      <td class="py-4 px-6 border-b border-grey-light">{{item.specialite}}</td>
+                      <td class="py-4 px-6 border-b border-grey-light">
+                      
+                      </td>
+                  </tr>
+              }
+              
+          </tbody>
+      </table>
+     
+  </div>
+</div>
+<app-pagination [data]="dataPagination" (onGetNumberPage)="paginate($event)" ></app-pagination>
+
+
+  </div>
+
+

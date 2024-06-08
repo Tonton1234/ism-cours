@@ -1,0 +1,82 @@
+<div class="w-100 lg:w-1/2 mt-6 pl-0 lg:pl-2">
+    <p class="text-xl pb-6 flex items-center">
+        <i class="fas fa-list mr-3"></i> New Professeur
+    </p>
+    <div class="leading-loose" style="margin-left: 50%; width: 100%;">
+        <form #formProfesseur="ngForm" (ngSubmit)="formProfesseur.form.valid && onSubmit()" class="p-10 bg-white rounded shadow-xl">
+            <p class="text-lg text-gray-800 font-medium pb-4">Ajouter Professeur</p>
+        
+            <div class="">
+                <label class="block text-sm text-gray-600" for="cus_name">Nom</label>
+                <input
+                name="nom"
+                #nom="ngModel"
+                [(ngModel)]="professeurCreate.nom"
+                 class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="Nom" aria-label="Name">
+                 @if (nom.errors && (nom.dirty || nom.touched)) {
+                      <small   class="form-text text-danger"  >Le nom ne doit pas etre vide </small>
+                  }
+                </div>
+                <div class="">
+                    <label class="block text-sm text-gray-600" for="cus_name">presom</label>
+                    <input
+                    name="presom"
+                    #prenom="ngModel"
+                    [(ngModel)]="professeurCreate.prenom"
+                     class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="prenom" aria-label="Name">
+                     @if (prenom.errors && (prenom.dirty || prenom.touched)) {
+                    
+                          <small   class="form-text text-danger"  >Le prenom ne doit pas etre vide </small>
+                        
+                      }
+                </div>
+                <div class="">
+                    <label class="block text-sm text-gray-600" for="cus_name">Username</label>
+                    <input
+                    name="username"
+                    #username="ngModel"
+                    [(ngModel)]="professeurCreate.username"
+                     class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="Username" aria-label="Name">
+                     @if (username.errors && (username.dirty || username.touched)) {
+                    
+                          <small   class="form-text text-danger"  >Le username ne doit pas etre vide </small>
+                        
+                      }
+                </div>
+                
+                <div class="">
+                    <label class="block text-sm text-gray-600" for="cus_name">grade</label>
+                    <input
+                    name="grade"
+                    #grade="ngModel"
+                    [(ngModel)]="professeurCreate.grade"
+                     class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="Grade" aria-label="Name">
+                     @if (grade.errors && (grade.dirty || grade.touched)) {
+                    
+                          <small   class="form-text text-danger"  >Le grade ne doit pas etre vide </small>
+                        
+                      }
+                </div>
+                <div class="">
+                    <label class="block text-sm text-gray-600" for="cus_name">specialite</label>
+                    <input
+                    name="specialite"
+                    #specialite="ngModel"
+                    [(ngModel)]="professeurCreate.specialite"
+                     class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="Specialite" aria-label="Name">
+                     @if (specialite.errors && (specialite.dirty || specialite.touched)) {
+                    
+                          <small   class="form-text text-danger"  >Le specialite ne doit pas etre vide </small>
+                        
+                      }
+                </div>
+            <div  class="my-2 ">
+                <button [disabled]="formProfesseur.invalid" type="submit" style="background-color: #3498db; color: white; padding: 10px 20px; border-radius: 5px; font-size: 16px; border: none;">Save</button>
+              
+            </div>
+        </form>
+    </div>
+   
+</div>
+
+

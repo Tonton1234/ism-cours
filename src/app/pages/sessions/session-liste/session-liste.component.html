@@ -1,0 +1,68 @@
+<div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
+    <h1 class="text-3xl text-black pb-6">Session Cours</h1>
+    <div class="w-90 flex">
+        <div  class="my-2 ">
+            <button routerLink="/newSession" style="background-color: #3498db; color: white; padding: 10px 20px; border-radius: 5px; font-size: 16px; border: none;">Nouveau</button>
+          
+        </div>
+        <form  class="ml-10">
+          
+        
+             <div class="relative inline-block w-64">
+                <label class="block text-sm text-gray-600">Etat :    </label>
+                <select [(ngModel)]="optionSelectionnee" (change)="maFonction(optionSelectionnee)" name="options" class="block appearance-none w-full bg-classwhite border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="">All</option>
+                    <option value="Planifier">En Cours</option>
+                    <option value="Terminer">Terminer</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 12l-5-5 1.5-1.5L10 9l3.5-3.5L15 7z"/></svg>
+                </div>
+          </div>
+        </form>
+    </div>
+    
+    <div class="w-full mt-6">
+        <p class="text-xl pb-3 flex items-center">
+            <i class="fas fa-list mr-3"></i> Liste Des Session Cours
+        </p>
+      
+    <div class="bg-white overflow-auto">
+      <table class="min-w-full bg-white">
+          <thead class="bg-gray-800 text-white">
+              <tr>
+                  <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Libelle</th>
+                  <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Date</th>
+                  <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Heure Debut</th>
+                  <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Heure Fin</th>
+                  <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Cours</th>
+                  <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Etat</th>
+                  <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Action</th>
+              </tr>
+          </thead>
+          <tbody class="text-gray-700">
+              @for (item of response?.results; track $index) {
+                  <tr class="hover:bg-grey-lighter">
+                      <td class="py-4 px-6 border-b border-grey-light">{{item.libelle}}</td>
+                      <td class="py-4 px-6 border-b border-grey-light">{{item.date}}</td>
+                      <td class="py-4 px-6 border-b border-grey-light">{{item.heureDebut}}</td>
+                      <td class="py-4 px-6 border-b border-grey-light">{{item.heureFin}}</td>
+                      <td class="py-4 px-6 border-b border-grey-light">{{item.cours.libelle}}</td>
+                      <td class="py-4 px-6 border-b border-grey-light">{{item.etat}}</td>
+                      <td class="py-4 px-6 border-b border-grey-light"><button (click)="annuler(item.id)" routerLink="/session/{{item.id}}" style="background-color: #3498db; color: white; padding: 10px 20px; border-radius: 5px; font-size: 16px; border: none;">Annuler</button>
+                      </td>
+                  </tr>
+              }
+              
+          </tbody>
+      </table>
+     
+  </div>
+</div>
+<app-pagination [data]="dataPagination" (onGetNumberPage)="paginate($event)" ></app-pagination>
+
+
+  </div>
+
+
+
