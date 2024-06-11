@@ -19,11 +19,12 @@ import { SalleServiceService } from '../../../services/impl/salle-service.servic
 import { Cours } from '../../../core/models/cours.response';
 import { Salle } from '../../../core/models/salle.response';
 import { SessionServiceService } from '../../../services/impl/session-service.service';
+import { MenuComponent } from '../../menu/menu.component';
 
 @Component({
   selector: 'app-session-form',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule,Select2Module],
+  imports: [ReactiveFormsModule,CommonModule,Select2Module,MenuComponent],
   templateUrl: './session-form.component.html',
   styleUrl: './session-form.component.css'
 })

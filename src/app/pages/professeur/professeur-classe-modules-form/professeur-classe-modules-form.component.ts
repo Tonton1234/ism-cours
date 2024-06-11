@@ -15,12 +15,13 @@ import { SemestreServiceService } from '../../../services/impl/semestre-service.
 import { Semestre } from '../../../core/models/semestre.response';
 import { ProfesseurClasseModulesServiceService } from '../../../services/impl/professeur-classe-modules-service.service';
 import { Select2Module } from 'ng-select2-component';
+import { MenuComponent } from '../../menu/menu.component';
 
 
 @Component({
   selector: 'app-professeur-classe-modules-form',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule,Select2Module],
+  imports: [ReactiveFormsModule,CommonModule,Select2Module,MenuComponent],
   templateUrl: './professeur-classe-modules-form.component.html',
   styleUrl: './professeur-classe-modules-form.component.css'
 })

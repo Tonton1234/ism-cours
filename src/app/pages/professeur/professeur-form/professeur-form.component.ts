@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { ProfesseurCreate } from '../../../core/models/professeur.response';
 import { ProfesseurServiceService } from '../../../services/impl/professeur-service.service';
 import { Router } from '@angular/router';
+import { MenuComponent } from '../../menu/menu.component';
 
 @Component({
   selector: 'app-professeur-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,MenuComponent,MenuComponent],
   templateUrl: './professeur-form.component.html',
   styleUrl: './professeur-form.component.css'
 })

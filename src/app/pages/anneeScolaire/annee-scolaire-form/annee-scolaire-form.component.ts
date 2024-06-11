@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { AnneeScolaireCreate } from '../../../core/models/anneeScolaire';
 import { AnneeScolaireService } from '../../../services/impl/annee-scolaire.service';
 import { Router } from '@angular/router';
+import { MenuComponent } from '../../menu/menu.component';
 
 @Component({
   selector: 'app-annee-scolaire-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,MenuComponent],
   templateUrl: './annee-scolaire-form.component.html',
   styleUrl: './annee-scolaire-form.component.css'
 })

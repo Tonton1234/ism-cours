@@ -6,11 +6,12 @@ import { Professeur } from '../../../core/models/professeur.response';
 import { RestResponse } from '../../../core/models/rest.response';
 import { PaginationModel } from '../../../core/models/pagination.model';
 import { ProfesseurServiceService } from '../../../services/impl/professeur-service.service';
+import { MenuComponent } from '../../menu/menu.component';
 
 @Component({
   selector: 'app-professeur-liste',
   standalone: true,
-  imports: [CommonModule, RouterLink,PaginationComponent],
+  imports: [CommonModule, RouterLink,PaginationComponent,MenuComponent],
   templateUrl: './professeur-liste.component.html',
   styleUrl: './professeur-liste.component.css'
 })

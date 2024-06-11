@@ -1,10 +1,13 @@
+<div class="w-full h-screen overflow-x-hidden border-t flex " >
+    <app-menu></app-menu>
+    <div style="flex: 1;">
 <div class="w-100 lg:w-1/2 mt-6 pl-0 lg:pl-2">
     <p class="text-xl pb-6 flex items-center">
-        <i class="fas fa-list mr-3"></i> New Annee Scoalire
+        <i class="fas fa-list mr-3"></i>New Salle
     </p>
     <div class="leading-loose" style="margin-left: 50%; width: 100%;">
         <form #formSalle="ngForm" (ngSubmit)="formSalle.form.valid && onSubmit()" class="p-10 bg-white rounded shadow-xl">
-            <p class="text-lg text-gray-800 font-medium pb-4">Nouvellr annee Scolaire</p>
+            <p class="text-lg text-gray-800 font-medium pb-4">Nouvelle Salle</p>
             <div class="">
                 <label class="block text-sm text-gray-600" for="cus_name">Nom</label>
                 <input
@@ -51,5 +54,7 @@
         </form>
     </div>
    
+</div>
+</div>
 </div>
 

@@ -6,11 +6,12 @@ import { RestResponse } from '../../../core/models/rest.response';
 import { Semestre } from '../../../core/models/semestre.response';
 import { PaginationModel } from '../../../core/models/pagination.model';
 import { SemestreServiceService } from '../../../services/impl/semestre-service.service';
+import { MenuComponent } from '../../menu/menu.component';
 
 @Component({
   selector: 'app-semestre-liste',
   standalone: true,
-  imports: [CommonModule, RouterLink,PaginationComponent],
+  imports: [CommonModule, RouterLink,PaginationComponent,MenuComponent],
   templateUrl: './semestre-liste.component.html',
   styleUrl: './semestre-liste.component.css'
 })

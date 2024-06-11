@@ -13,12 +13,13 @@ import { CalendarOptions, EventSourceInput } from '@fullcalendar/core';
 import timeGridPlugin from '@fullcalendar/timegrid'
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import Swal from 'sweetalert2';
+import { MenuComponent } from '../../menu/menu.component';
 
 
 @Component({
   selector: 'app-session-professeur',
   standalone: true,
-  imports: [FullCalendarModule,CommonModule],
+  imports: [FullCalendarModule,CommonModule,MenuComponent],
   templateUrl: './session-professeur.component.html',
   styleUrl: './session-professeur.component.css'
 })
@@ -31,7 +32,7 @@ export class SessionProfesseurComponent implements OnInit {
       for (let index = 0; index < this.response?.results.length!; index++) {
         const e = this.response?.results[index];
         if (+event.event._def.publicId== +e!.id) {
-          console.log(e)
+         
            const swalWithBooststrapButtons = Swal.mixin(
             {
               customClass:{
@@ -46,13 +47,33 @@ export class SessionProfesseurComponent implements OnInit {
           //  }
           swalWithBooststrapButtons.fire({
                  title:"ACTION",
+                 html:`Module:  ${e?.module}  lieu: ${e?.lieu}  </br> date: ${e?.date} | duree: ${e?.duree} </br> a Classes: ${e?.classeList} |`,
                  showCancelButton:true,
                  confirmButtonText:"Anuller",
                  cancelButtonText:"Retour",
                  reverseButtons:true,
           })
-          .then(() => {
-            
+          .then((result) => {
+            console.log(e?.isArchived);
+            if(result.isConfirmed){
+              if(e?.isArchived==1 ){
+                swalWithBooststrapButtons.fire(
+                  {
+                    title:"CONFIRMER ANNULATION",
+                    text:"Vous etes sur le point d'annuler la session",
+                    icon:"warning",
+                  
+                  }
+                );
+              
+                this.sessionService.annuler(0,e.id).subscribe(data => {
+                  console.log(data)
+                    
+                      this.router.navigateByUrl("/sessionProfesseur")
+                    
+                });
+              }
+            }
           });
        
           
@@ -75,7 +96,8 @@ events: EventSourceInput|null|undefined;
    this.initEvent();
   }
   initEvent() {
-    this.sessionService.getSessionByUsername("baila@gmail.com").subscribe(data =>{
+
+    this.sessionService.getSessionByUsername(localStorage.getItem('auth')!).subscribe(data =>{
       this.response = data;
       if(this.response.status == 200){
         for (let index = 0; index < this.response.results.length; index++) {
@@ -91,7 +113,7 @@ events: EventSourceInput|null|undefined;
         };
        this.calendarOptions.events =this.mySessions
        this.events=this.mySessions;
-       console.log(this.calendarOptions.events);
+    
       }
     });
   }

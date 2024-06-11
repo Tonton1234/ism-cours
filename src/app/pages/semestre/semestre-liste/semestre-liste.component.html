@@ -1,12 +1,15 @@
-<div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
-    <h1 class="text-3xl text-black pb-6">Salles</h1>
+
+<div class="w-full h-screen overflow-x-hidden border-t flex " >
+        <app-menu></app-menu>
+        <div style="flex: 1;">
+    <h1 class="text-3xl text-black pb-6">Semestre</h1>
     <div  class="my-2 ">
         <button routerLink="form" style="background-color: #3498db; color: white; padding: 10px 20px; border-radius: 5px; font-size: 16px; border: none;">Nouveau</button>
       
     </div>
     <div class="w-full mt-6">
         <p class="text-xl pb-3 flex items-center">
-            <i class="fas fa-list mr-3"></i> Liste Des Salles
+            <i class="fas fa-list mr-3"></i> Liste Des Semestres
         </p>
       
     <div class="bg-white overflow-auto">
@@ -33,8 +36,8 @@
   </div>
 </div>
 <app-pagination [data]="dataPagination" (onGetNumberPage)="paginate($event)" ></app-pagination>
+</div>
 
-
-  </div>
+</div>
 
 

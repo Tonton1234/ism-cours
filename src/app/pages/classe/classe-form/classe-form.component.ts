@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { ClasseServiceService } from '../../../services/impl/classe-service.service';
 import { Router } from '@angular/router';
 import { ClasseCreate, Filiere, Niveau } from '../../../core/models/classe.response';
+import { MenuComponent } from '../../menu/menu.component';
 
 @Component({
   selector: 'app-classe-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,MenuComponent],
   templateUrl: './classe-form.component.html',
   styleUrl: './classe-form.component.css'
 })

@@ -6,11 +6,12 @@ import { RestResponse } from '../../../core/models/rest.response';
 import { Classe } from '../../../core/models/classe.response';
 import { PaginationModel } from '../../../core/models/pagination.model';
 import { ClasseServiceService } from '../../../services/impl/classe-service.service';
+import { MenuComponent } from '../../menu/menu.component';
 
 @Component({
   selector: 'app-classe-liste',
   standalone: true,
-  imports: [CommonModule, RouterLink,PaginationComponent],
+  imports: [CommonModule, RouterLink,PaginationComponent,MenuComponent],
   templateUrl: './classe-liste.component.html',
   styleUrl: './classe-liste.component.css'
 })

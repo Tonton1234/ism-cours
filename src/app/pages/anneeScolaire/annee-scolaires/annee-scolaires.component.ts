@@ -6,11 +6,12 @@ import { CommonModule } from '@angular/common';
 import { PaginationModel } from '../../../core/models/pagination.model';
 import { RouterLink } from '@angular/router';
 import { PaginationComponent } from '../../../core/components/pagination/pagination.component';
+import { MenuComponent } from '../../menu/menu.component';
 
 @Component({
   selector: 'app-annee-scolaires',
   standalone: true,
-  imports: [CommonModule, RouterLink,PaginationComponent],
+  imports: [CommonModule, RouterLink,PaginationComponent,MenuComponent],
   templateUrl: './annee-scolaires.component.html',
   styleUrl: './annee-scolaires.component.css'
 })

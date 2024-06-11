@@ -1,76 +1,81 @@
-<div class="w-100 lg:w-1/2 mt-6 pl-0 lg:pl-2">
-    <p class="text-xl pb-6 flex items-center">
-        <i class="fas fa-list mr-3"></i>Profeseur Classe
-    </p>
-    <div class="leading-loose" style="margin-left: 50%; width: 100%;">
-        <form [action]="" [formGroup]="form"  (ngSubmit)="onSubmit()" class="p-10 bg-white rounded shadow-xl">
-                        <div class="col">
-                               <label class="block text-sm text-gray-600">Classe :    </label>
-                               <select
-                               formControlName="classeId"
+<div class="w-full h-screen overflow-x-hidden border-t flex " >
+  <app-menu></app-menu>
+  <div style="flex: 1;">
+    <div class="w-100 lg:w-1/2 mt-6 pl-0 lg:pl-2">
+      <p class="text-xl pb-6 flex items-center">
+          <i class="fas fa-list mr-3"></i>Profeseur Classe
+      </p>
+      <div class="leading-loose" style="margin-left: 50%; width: 100%;">
+          <form [action]="" [formGroup]="form"  (ngSubmit)="onSubmit()" class="p-10 bg-white rounded shadow-xl">
+                          <div class="col">
+                                 <label class="block text-sm text-gray-600">Classe :    </label>
+                                 <select
+                                 formControlName="classeId"
+                                
+                                name="options" class="block appearance-none w-full bg-classwhite border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                                @for (item of classes?.results; track $index) {
+                                  <option value="{{item.id}}">{{item.libelle}}</option>
+                              }
+                                  
                               
-                              name="options" class="block appearance-none w-full bg-classwhite border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                              @for (item of classes?.results; track $index) {
-                                <option value="{{item.id}}">{{item.libelle}}</option>
-                            }
-                                
-                            
-                               </select>
-                                
-                        </div>
-                        <div class="col">
-                            <label class="block text-sm text-gray-600">Professeur :    </label>
-                            <select
-                            formControlName="professeurId"
+                                 </select>
+                                  
+                          </div>
+                          <div class="col">
+                              <label class="block text-sm text-gray-600">Professeur :    </label>
+                              <select
+                              formControlName="professeurId"
+                             
+                             name="options" class="block appearance-none w-full bg-classwhite border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                             @for (item of professeurs?.results; track $index) {
+                               <option value="{{item.id}}">{{item.nom }} {{item.prenom}}</option>
+                           }
+                               
                            
-                           name="options" class="block appearance-none w-full bg-classwhite border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                           @for (item of professeurs?.results; track $index) {
-                             <option value="{{item.id}}">{{item.nom }} {{item.prenom}}</option>
-                         }
-                             
-                         
-                            </select>
-                             
-                     </div>
-                     <div class="col">
-                        <label class="block text-sm text-gray-600">Modules :    </label>
-                        <select2
-                        [overlay]="overlay"
-                        formControlName="modules"
-                       [data]="dataModules"
-                       [multiple]="true"
-                       styleMode="borderless"
-                       name="options" class="block appearance-none w-full bg-classwhite border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                      
-                         
-                     
-                        </select2>
-                         
-                      </div>
-                      
-                      <div class="col">
-                        <label class="block text-sm text-gray-600">Semestre :    </label>
-                        <select
-                        formControlName="semestre"
+                              </select>
+                               
+                       </div>
+                       <div class="col">
+                          <label class="block text-sm text-gray-600">Modules :    </label>
+                          <select2
+                          [overlay]="overlay"
+                          formControlName="modules"
+                         [data]="dataModules"
+                         [multiple]="true"
+                         styleMode="borderless"
+                         name="options" class="block appearance-none w-full bg-classwhite border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                        
+                           
                        
-                       name="options" class="block appearance-none w-full bg-classwhite border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                       @for (item of semestres?.results; track $index) {
-                         <option value="{{item.id}}">{{item.libelle }}</option>
-                     }
-                         
-                     
-                        </select>
-                         
-                      </div>
-        
-                        <div  class="my-2 ">
-                            <button [disabled]="form.invalid" type="submit" style="background-color: #3498db; color: white; padding: 10px 20px; border-radius: 5px; font-size: 16px; border: none;">Save</button>
-                          
+                          </select2>
+                           
                         </div>
-                
-        </form>
-    </div>
-   
+                        
+                        <div class="col">
+                          <label class="block text-sm text-gray-600">Semestre :    </label>
+                          <select
+                          formControlName="semestre"
+                         
+                         name="options" class="block appearance-none w-full bg-classwhite border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                         @for (item of semestres?.results; track $index) {
+                           <option value="{{item.id}}">{{item.libelle }}</option>
+                       }
+                           
+                       
+                          </select>
+                           
+                        </div>
+          
+                          <div  class="my-2 ">
+                              <button [disabled]="form.invalid" type="submit" style="background-color: #3498db; color: white; padding: 10px 20px; border-radius: 5px; font-size: 16px; border: none;">Save</button>
+                            
+                          </div>
+                  
+          </form>
+      </div>
+     
+  </div>
+  </div>
 </div>
 
 

@@ -6,11 +6,13 @@ import { RestResponse } from '../../../core/models/rest.response';
 import { Salle } from '../../../core/models/salle.response';
 import { PaginationModel } from '../../../core/models/pagination.model';
 import { SalleServiceService } from '../../../services/impl/salle-service.service';
+import { MenuComponent } from '../../menu/menu.component';
+
 
 @Component({
   selector: 'app-salle-liste',
   standalone: true,
-  imports: [CommonModule, RouterLink,PaginationComponent],
+  imports: [CommonModule, RouterLink,PaginationComponent,MenuComponent],
   templateUrl: './salle-liste.component.html',
   styleUrl: './salle-liste.component.css'
 })

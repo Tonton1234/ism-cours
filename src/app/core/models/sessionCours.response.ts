@@ -28,7 +28,7 @@ export interface SessionCoursCreate{
    
 }
 export interface DtoRequestCalendar {
-    id:Number;
+    id:number;
     module:String;
     semestre:String;
     professeur:String;

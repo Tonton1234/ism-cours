@@ -1,5 +1,8 @@
-<div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
-    <h1 class="text-3xl text-black pb-6">Annee Scolaire</h1>
+
+<div class="w-full h-screen overflow-x-hidden border-t flex ">
+    <app-menu></app-menu>
+    <div style="flex: 1;">
+        <h1 class="text-3xl text-black pb-6">Annee Scolaire</h1>
     <div  class="my-2 ">
         <button routerLink="form" style="background-color: #3498db; color: white; padding: 10px 20px; border-radius: 5px; font-size: 16px; border: none;">Nouveau</button>
       
@@ -35,4 +38,6 @@
 <app-pagination [data]="dataPagination" (onGetNumberPage)="paginate($event)" ></app-pagination>
 
 
+    </div>
+    
   </div>

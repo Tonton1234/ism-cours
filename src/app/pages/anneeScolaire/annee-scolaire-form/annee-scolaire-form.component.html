@@ -1,28 +1,32 @@
-<div class="w-100 lg:w-1/2 mt-6 pl-0 lg:pl-2">
-    <p class="text-xl pb-6 flex items-center">
-        <i class="fas fa-list mr-3"></i> New Annee Scoalire
-    </p>
-    <div class="leading-loose" style="margin-left: 50%; width: 100%;">
-        <form #formAnneeScolaire="ngForm" (ngSubmit)="formAnneeScolaire.form.valid && onSubmit()" class="p-10 bg-white rounded shadow-xl">
-            <p class="text-lg text-gray-800 font-medium pb-4">Nouvellr annee Scolaire</p>
-            <div class="">
-                <label class="block text-sm text-gray-600" for="cus_name">Libelle</label>
-                <input
-                name="libelle"
-                #libelle="ngModel"
-                [(ngModel)]="anneeScolaireCreate.libelle"
-                 class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="Libelle de L'annee" aria-label="Name">
-                 @if (libelle.errors && (libelle.dirty || libelle.touched)) {
-                
-                      <small   class="form-text text-danger"  >Le Libelle ne doit pas etre vide </small>
+<div class="w-full h-screen overflow-x-hidden border-t flex " >
+    <app-menu></app-menu>
+    <div style="flex: 1;">
+        <p class="text-xl pb-6 flex items-center">
+            <i class="fas fa-list mr-3"></i> New Annee Scoalire
+        </p>
+        <div class="leading-loose" style="margin-left: 25%; width: 50%;">
+            <form #formAnneeScolaire="ngForm" (ngSubmit)="formAnneeScolaire.form.valid && onSubmit()" class="p-10 bg-white rounded shadow-xl">
+                <p class="text-lg text-gray-800 font-medium pb-4">Nouvelle annee Scolaire</p>
+                <div class="">
+                    <label class="block text-sm text-gray-600" for="cus_name">Libelle</label>
+                    <input
+                    name="libelle"
+                    #libelle="ngModel"
+                    [(ngModel)]="anneeScolaireCreate.libelle"
+                     class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="Libelle de L'annee" aria-label="Name">
+                     @if (libelle.errors && (libelle.dirty || libelle.touched)) {
                     
-                  }
+                          <small   class="form-text text-danger"  >Le Libelle ne doit pas etre vide </small>
+                        
+                      }
+                    </div>
+                <div  class="my-2 ">
+                    <button [disabled]="formAnneeScolaire.invalid" type="submit" style="background-color: #3498db; color: white; padding: 10px 20px; border-radius: 5px; font-size: 16px; border: none;">Save</button>
+                  
                 </div>
-            <div  class="my-2 ">
-                <button [disabled]="formAnneeScolaire.invalid" type="submit" style="background-color: #3498db; color: white; padding: 10px 20px; border-radius: 5px; font-size: 16px; border: none;">Save</button>
-              
-            </div>
-        </form>
+            </form>
+        </div>
+       
     </div>
-   
 </div>
+

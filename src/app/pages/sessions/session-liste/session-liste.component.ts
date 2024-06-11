@@ -7,11 +7,12 @@ import { SessionCours } from '../../../core/models/sessionCours.response';
 import { PaginationModel } from '../../../core/models/pagination.model';
 import { SessionServiceService } from '../../../services/impl/session-service.service';
 import { FormsModule } from '@angular/forms';
+import { MenuComponent } from '../../menu/menu.component';
 
 @Component({
   selector: 'app-session-liste',
   standalone: true,
-  imports: [CommonModule, RouterLink,PaginationComponent,FormsModule],
+  imports: [CommonModule, RouterLink,PaginationComponent,FormsModule,MenuComponent],
   templateUrl: './session-liste.component.html',
   styleUrl: './session-liste.component.css'
 })

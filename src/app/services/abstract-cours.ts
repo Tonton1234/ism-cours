@@ -5,4 +5,5 @@ import { AbstractService } from "./abstract-service";
 
 export interface AbstractCours extends AbstractService<Cours[]>{
     add(data:CoursCreate):Observable<RestResponse<CoursCreate>>;
+    findByProf(data:String):Observable<RestResponse<Cours[]>>;
 }

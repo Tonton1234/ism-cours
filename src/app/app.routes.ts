@@ -21,6 +21,9 @@ import { ProfesseurClasseModulesFormComponent } from './pages/professeur/profess
 import { FormCoursComponent } from './pages/cours/form-cours/form-cours.component';
 import { SessionFormComponent } from './pages/sessions/session-form/session-form.component';
 import { SessionProfesseurComponent } from './pages/professeur/session-professeur/session-professeur.component';
+import { DashbordComponent } from './pages/page-not-found/dashbord/dashbord.component';
+import { LoginComponent } from './pages/login/login.component';
+import { CoursforprofComponent } from './pages/professeur/coursforprof/coursforprof.component';
 
 
 export const routes: Routes = [
@@ -129,10 +132,18 @@ export const routes: Routes = [
         path: "semestres",
         component: SemestreListeComponent
     },
+    {
+        path: "dashbord",
+        component: DashbordComponent
+    },
    
     {
         path: "cours",
         component: CoursListeComponent
+    },
+    {
+        path: "coursProfesseur",
+        component: CoursforprofComponent
     },
     {
         path: "newCours",
@@ -151,8 +162,13 @@ export const routes: Routes = [
         path: "sessionProfesseur",
         component: SessionProfesseurComponent
     },
+    {
+        path:"login",
+        component:LoginComponent
+
+      },
     {path:'',
-        redirectTo:'/anneeScolaires',
+        redirectTo:'/login',
         pathMatch: 'full',
     },
     {

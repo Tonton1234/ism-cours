@@ -5,11 +5,12 @@ import { ModuleServiceService } from '../../../services/impl/module-service.serv
 import { Router } from '@angular/router';
 import { SalleCreate } from '../../../core/models/salle.response';
 import { SalleServiceService } from '../../../services/impl/salle-service.service';
+import { MenuComponent } from '../../menu/menu.component';
 
 @Component({
   selector: 'app-salle-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,MenuComponent],
   templateUrl: './salle-form.component.html',
   styleUrl: './salle-form.component.css'
 })

@@ -8,11 +8,12 @@ import { PaginationModel } from '../../../core/models/pagination.model';
 import { CoursServiceService } from '../../../services/impl/cours-service.service';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { MenuComponent } from '../../menu/menu.component';
 
 @Component({
   selector: 'app-cours-liste',
   standalone: true,
-  imports: [CommonModule, RouterLink,PaginationComponent,FormsModule],
+  imports: [CommonModule, RouterLink,PaginationComponent,FormsModule,MenuComponent],
   templateUrl: './cours-liste.component.html',
   styleUrl: './cours-liste.component.css'
 })

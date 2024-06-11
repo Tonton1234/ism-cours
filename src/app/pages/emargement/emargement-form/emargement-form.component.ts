@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { MenuComponent } from '../../menu/menu.component';
 
 @Component({
   selector: 'app-emargement-form',
   standalone: true,
-  imports: [],
+  imports: [MenuComponent ],
   templateUrl: './emargement-form.component.html',
   styleUrl: './emargement-form.component.css'
 })

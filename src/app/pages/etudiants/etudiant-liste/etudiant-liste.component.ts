@@ -9,10 +9,12 @@ import { EtudiantServiceService } from '../../../services/impl/etudiant-service.
 import { FormsModule } from '@angular/forms';
 import { Classe } from '../../../core/models/classe.response';
 import { ClasseServiceService } from '../../../services/impl/classe-service.service';
+import { MenuComponent } from '../../menu/menu.component';
+
 @Component({
   selector: 'app-etudiant-liste',
   standalone: true,
-  imports: [CommonModule, RouterLink,PaginationComponent,FormsModule],
+  imports: [CommonModule, RouterLink,PaginationComponent,FormsModule,MenuComponent],
   templateUrl: './etudiant-liste.component.html',
   styleUrl: './etudiant-liste.component.css'
 })

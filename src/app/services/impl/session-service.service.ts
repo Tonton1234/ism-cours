@@ -19,7 +19,8 @@ export class SessionServiceService implements AbstractSessionsCours{
   add(data: SessionCoursCreate): Observable<RestResponse<SessionCoursCreate>> {
     return  this.http.post<RestResponse<SessionCoursCreate>>(`${this.ApiUrl}`,data)
   }
-  annuler(page: number, id: number | null): Observable<RestResponse<SessionCours[]>> {
+  annuler(page: number=0, id: number | null): Observable<RestResponse<SessionCours[]>> {
+    
     const url=`${this.ApiUrl}/annuler/${id}?page=${page}`
       return this.http.get<RestResponse<SessionCours[]>>(url)
   }

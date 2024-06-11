@@ -1,59 +1,6 @@
 
 <div class="bg-gray-100 font-family-karla flex">
-  <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
-    <div class="p-6">
-        <a href="index.html" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">ISM APP</a>
-        <button class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
-            <i class="fas fa-plus mr-3"></i>
-        </button>
-    </div>
-    <nav class="text-white text-base font-semibold pt-3">
-        <a href="index.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-            <i class="fas fa-tachometer-alt mr-3"></i>
-            Dashboard
-        </a>
-        <a  [routerLink]="['/anneeScolaires']" routerLinkActive="router-link-active" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
-            <i class="fas fa-sticky-note mr-3"></i>
-            AnneeScolaires
-        </a>
-       
-        <a  [routerLink]="['/classes']" routerLinkActive="router-link-active" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
-            <i class="fas fa-sticky-note mr-3"></i>
-            Classes
-        </a>
-        <a  [routerLink]="['/professeurs']" routerLinkActive="router-link-active" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
-            <i class="fas fa-sticky-note mr-3"></i>
-            Professeur
-        </a>
-        <a  [routerLink]="['/salles']" routerLinkActive="router-link-active" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
-            <i class="fas fa-sticky-note mr-3"></i>
-           Salles
-        </a>
-        <a  [routerLink]="['/semestres']" routerLinkActive="router-link-active" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
-            <i class="fas fa-sticky-note mr-3"></i>
-          Semestre
-        </a>
-        <a  [routerLink]="['/modules']" routerLinkActive="router-link-active" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
-            <i class="fas fa-sticky-note mr-3"></i>
-          Module
-        </a>
-        <a  [routerLink]="['/etudiants/all']" routerLinkActive="router-link-active" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
-            <i class="fas fa-sticky-note mr-3"></i>
-          Etudiant
-        </a>
-        <a  [routerLink]="['/cours']" routerLinkActive="router-link-active" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
-            <i class="fas fa-sticky-note mr-3"></i>
-          Cours
-        </a>
-        <a  [routerLink]="['/session/all']" routerLinkActive="router-link-active" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
-            <i class="fas fa-sticky-note mr-3"></i>
-          Session Cours
-        </a>
-       
 
-    </nav>
-
-</aside>
 
 <div class="relative w-full flex flex-col h-screen overflow-y-hidden">
     <!-- Desktop Header -->
@@ -89,6 +36,7 @@
             <i class="fas fa-plus mr-3"></i> New Report
         </button> -->
     </header>
+    
 
    <router-outlet/>
 

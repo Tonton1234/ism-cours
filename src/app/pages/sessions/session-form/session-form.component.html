@@ -1,6 +1,9 @@
+<div class="w-full h-screen overflow-x-hidden border-t flex " >
+    <app-menu></app-menu>
+    <div style="flex: 1;">
 <div class="w-100 lg:w-1/2 mt-6 pl-0 lg:pl-2">
     <p class="text-xl pb-6 flex items-center">
-        <i class="fas fa-list mr-3"></i>Profeseur Classe
+        <i class="fas fa-list mr-3"></i>SESSION COURS
     </p>
     <div class="leading-loose" style="margin-left: 50%; width: 100%;">
         <form [action]="" [formGroup]="form"  (ngSubmit)="onSubmit()" class="p-10 bg-white rounded shadow-xl">
@@ -39,7 +42,10 @@
                       <input type="date"
                           name="date"
                           formControlName="date"
-                          class="form-control"  aria-label="Last name">
+                          class="form-control"  aria-label="Last name"
+                          style="border: 2px solid; background-color:white;"
+                        
+                          >
                           
                          @if (form.errors && (form.controls['date'].dirty || form.controls['date'].touched)) {
                           
@@ -52,6 +58,7 @@
                     <input type="time"
                         name="heureDebut"
                         formControlName="heureDebut"
+                          style="border: 2px solid; background-color:white;"
                         class="form-control"  aria-label="Last name">
                         
                        @if (form.errors && (form.controls['heureDebut'].dirty || form.controls['heureDebut'].touched)) {
@@ -65,6 +72,7 @@
                     <input type="time"
                         name="heureFin"
                         formControlName="heureFin"
+                          style="border: 2px solid; background-color:white;"
                         class="form-control"  aria-label="Last name">
                         
                        @if (form.errors && (form.controls['heureFin'].dirty || form.controls['heureFin'].touched)) {
@@ -84,6 +92,9 @@
     </div>
    
 </div>
+</div>
+</div>
+
 
 
 

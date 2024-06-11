@@ -15,12 +15,13 @@ import { ProfesseurClasseModulesServiceService } from '../../../services/impl/pr
 import { PaginationModel } from '../../../core/models/pagination.model';
 import { Select2Module } from 'ng-select2-component';
 import { CoursServiceService } from '../../../services/impl/cours-service.service';
+import { MenuComponent } from '../../menu/menu.component';
 
 
 @Component({
   selector: 'app-form-cours',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule,Select2Module],
+  imports: [ReactiveFormsModule,CommonModule,Select2Module,MenuComponent],
   templateUrl: './form-cours.component.html',
   styleUrl: './form-cours.component.css'
 })

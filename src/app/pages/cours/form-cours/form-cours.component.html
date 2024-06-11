@@ -1,8 +1,10 @@
-<div class="w-100 lg:w-1/2 mt-6 pl-0 lg:pl-2">
+<div class="w-full h-screen overflow-x-hidden border-t flex " >
+  <app-menu></app-menu>
+  <div class="w-100 lg:w-1/2 mt-6 pl-0 lg:pl-2">
     <p class="text-xl pb-6 flex items-center">
-        <i class="fas fa-list mr-3"></i>Profeseur Classe
+        <i class="fas fa-list mr-3"></i>AJOUT Cours
     </p>
-    <div class="leading-loose" style="margin-left: 50%; width: 100%;">
+    <div class="leading-loose" style="margin-left: 25%; width: 100%;">
         <form [action]="" [formGroup]="form"  (ngSubmit)="onSubmit()" class="p-10 bg-white rounded shadow-xl">
                     <div class="col">
                         <label class="block text-sm text-gray-600">Modules :    </label>
@@ -92,6 +94,10 @@
     </div>
    
 </div>
+  <div style="flex: 1;">
+  </div>
+</div>
+
 
 
 

@@ -12,6 +12,9 @@ import { environment } from '../../../environments/environment.development';
 export class CoursServiceService implements AbstractCours {
   private ApiUrl=`${environment.APIURL}/cours`
   constructor(private http:HttpClient) { }
+  findByProf(data: String): Observable<RestResponse<Cours[]>> {
+    return this.http.get<RestResponse<Cours[]>>(`${this.ApiUrl}/professeur/${data}?`)
+  }
   add(data: CoursCreate): Observable<RestResponse<CoursCreate>> {
     return  this.http.post<RestResponse<CoursCreate>>(`${this.ApiUrl}`,data)
   }

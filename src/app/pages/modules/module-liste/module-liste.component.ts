@@ -7,11 +7,12 @@ import { Salle } from '../../../core/models/salle.response';
 import { PaginationModel } from '../../../core/models/pagination.model';
 import { Module } from '../../../core/models/module.response';
 import { ModuleServiceService } from '../../../services/impl/module-service.service';
+import { MenuComponent } from '../../menu/menu.component';
 
 @Component({
   selector: 'app-module-liste',
   standalone: true,
-  imports: [CommonModule, RouterLink,PaginationComponent],
+  imports: [CommonModule, RouterLink,PaginationComponent,MenuComponent],
   templateUrl: './module-liste.component.html',
   styleUrl: './module-liste.component.css'
 })

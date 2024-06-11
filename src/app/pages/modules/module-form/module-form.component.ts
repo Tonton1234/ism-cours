@@ -3,11 +3,12 @@ import { ModuleServiceService } from '../../../services/impl/module-service.serv
 import { Router } from '@angular/router';
 import { ModuleCreate } from '../../../core/models/module.response';
 import { FormsModule } from '@angular/forms';
+import { MenuComponent } from '../../menu/menu.component';
 
 @Component({
   selector: 'app-module-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,MenuComponent],
   templateUrl: './module-form.component.html',
   styleUrl: './module-form.component.css'
 })

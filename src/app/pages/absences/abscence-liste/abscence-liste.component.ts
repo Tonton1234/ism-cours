@@ -6,11 +6,12 @@ import { RestResponse } from '../../../core/models/rest.response';
 import { Abscence } from '../../../core/models/abscence';
 import { PaginationModel } from '../../../core/models/pagination.model';
 import { AbscenceServiceService } from '../../../services/impl/abscence-service.service';
+import { MenuComponent } from '../../menu/menu.component';
 
 @Component({
   selector: 'app-abscence-liste',
   standalone: true,
-  imports: [CommonModule, RouterLink,PaginationComponent],
+  imports: [CommonModule, RouterLink,PaginationComponent,MenuComponent],
   templateUrl: './abscence-liste.component.html',
   styleUrl: './abscence-liste.component.css'
 })

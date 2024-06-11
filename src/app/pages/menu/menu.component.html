@@ -1,0 +1,83 @@
+<div style="background-color: black; flex:1;">
+    <aside class="relative bg-sidebar h-screen  hidden sm:block shadow-xl">
+        <div class="p-6">
+            <a href="index.html" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">ISM APP</a>
+            <button (click)="onLogoutClick()" class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
+                <i class="fas fa-plus mr-3"></i>
+                <a  class="block px-4 py-2 account-link hover:text-white">Sign Out</a>
+            </button>
+        </div>
+       
+        @if (  localStorage=="PROFESSEUR") {
+            <nav class="text-white text-base font-semibold pt-3">
+            
+                <a href="index.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                    <i class="fas fa-tachometer-alt mr-3"></i>
+                    Dashboard
+                </a>
+              
+                <a  [routerLink]="['/coursProfesseur']" routerLinkActive="router-link-active" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
+                    <i class="fas fa-sticky-note mr-3"></i>
+                  Cours
+                </a>
+                <a  [routerLink]="['/sessionProfesseur']" routerLinkActive="router-link-active" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
+                    <i class="fas fa-sticky-note mr-3"></i>
+                  Session Cours
+                </a>
+               
+        
+            </nav>
+        }
+        @if ( localStorage=="ADMIN") {
+            <nav class="text-white text-base font-semibold pt-3">
+            
+                <a href="index.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                    <i class="fas fa-tachometer-alt mr-3"></i>
+                    Dashboard
+                </a>
+                <a  [routerLink]="['/anneeScolaires']" routerLinkActive="router-link-active" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
+                    <i class="fas fa-sticky-note mr-3"></i>
+                    AnneeScolaires
+                </a>
+               
+                <a  [routerLink]="['/classes']" routerLinkActive="router-link-active" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
+                    <i class="fas fa-sticky-note mr-3"></i>
+                    Classes
+                </a>
+                <a  [routerLink]="['/professeurs']" routerLinkActive="router-link-active" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
+                    <i class="fas fa-sticky-note mr-3"></i>
+                    Professeur
+                </a>
+                <a  [routerLink]="['/salles']" routerLinkActive="router-link-active" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
+                    <i class="fas fa-sticky-note mr-3"></i>
+                   Salles
+                </a>
+                <a  [routerLink]="['/semestres']" routerLinkActive="router-link-active" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
+                    <i class="fas fa-sticky-note mr-3"></i>
+                  Semestre
+                </a>
+                <a  [routerLink]="['/modules']" routerLinkActive="router-link-active" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
+                    <i class="fas fa-sticky-note mr-3"></i>
+                  Module
+                </a>
+                <a  [routerLink]="['/etudiants/all']" routerLinkActive="router-link-active" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
+                    <i class="fas fa-sticky-note mr-3"></i>
+                  Etudiant
+                </a>
+                <a  [routerLink]="['/cours']" routerLinkActive="router-link-active" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
+                    <i class="fas fa-sticky-note mr-3"></i>
+                  Cours
+                </a>
+                <a  [routerLink]="['/session/all']" routerLinkActive="router-link-active" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
+                    <i class="fas fa-sticky-note mr-3"></i>
+                  Session Cours
+                </a>
+               
+        
+            </nav>
+        }
+       
+       
+    
+    </aside>
+</div>
